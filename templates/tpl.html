@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Прикол)</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        .pre {
+            font-family: Lobster;
+            font-weight: normal;
+        }
+
+        .msg {
+            font-family: Roboto;
+        }
+        .wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h1 class="pre">Мудрая мысль на сегодня...</h1>
+    <h2 id="msg" class="msg">{{ msg }}</h2>
+</div>
+</body>
+<script defer>
+    let msgContainer = document.getElementById('msg');
+    setInterval(() => {
+        fetch('/msg')
+            .then(r => r.text())
+            .then(text => {
+                msgContainer.innerText = text
+            });
+    }, 3000);
+</script>
+</html>
