@@ -29,9 +29,6 @@ def thread_wrap():
     while True:
         weights = [random.uniform(1.0, 2.0) for _ in range(3)]
         global c_model, p_model, t_model
-        # слишком много пословиц, слишком мало ЧУВАШИИ
-        weights[0] *= 3
-        weights[1] /= 3
         combine_models(c_model, p_model, t_model, weights=weights)
         sleep(3)
 
