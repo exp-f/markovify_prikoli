@@ -45,4 +45,5 @@ def main():
 def get_msg():
     return msg
 
-app.run(port=8000)
+
+app.run(host='0.0.0.0', port=8000)
