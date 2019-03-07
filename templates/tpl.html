@@ -9,11 +9,16 @@
         .pre {
             font-family: Lobster;
             font-weight: normal;
+            color: #ffffff;
+            text-shadow: 0 0 4px #000;
         }
 
         .msg {
             font-family: Roboto;
+            color: #ffffff;
+            text-shadow: 0 0 4px #000;
         }
+
         .wrapper {
             max-width: 480px;
             margin: 0 auto;
@@ -23,7 +28,7 @@
 <body>
 <div class="wrapper">
     <h1 class="pre">Мудрая мысль на сегодня...</h1>
-    <h2 id="msg" class="msg">{{ msg }}</h2>
+    <h2 id="msg" class="msg">{{ msg }}...</h2>
 </div>
 </body>
 <script defer>

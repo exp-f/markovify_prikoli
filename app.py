@@ -23,8 +23,6 @@ def combine_models(*args, weights=(1, 1, 1)):
     global msg
     combo_model = markovify.combine(args, weights)
     msg = combo_model.make_sentence(tries=1000)
-    print(msg)
-    print(weights)
 
 
 def thread_wrap():
