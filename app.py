@@ -1,7 +1,8 @@
 from time import sleep
+import random
+import sys
 from threading import Thread
 import markovify
-import random
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -17,6 +18,8 @@ p_text = '\n'.join(random.choices(p_text.split('\n'), k=500))
 c_model = markovify.NewlineText(c_text)
 p_model = markovify.NewlineText(p_text)
 t_model = markovify.NewlineText(c_text)
+
+port = sys.argv[1]
 
 
 def combine_models(*args, weights=(1, 1, 1)):
@@ -46,4 +49,4 @@ def get_msg():
     return msg
 
 
-app.run(host='0.0.0.0', port=8000)
+app.run(host='0.0.0.0', port=port)
