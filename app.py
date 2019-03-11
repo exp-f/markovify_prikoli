@@ -16,7 +16,6 @@ t_text = open('datasets/tweets.txt', 'r', encoding='UTF-8').read()
 ch_model = markovify.NewlineText(ch_text)
 p_model = markovify.NewlineText(p_text)
 t_model = markovify.NewlineText(t_text)
-congrats_text = open('datasets/congrats.txt', 'r', encoding='UTF-8').read()
 port = sys.argv[1]
 
 
