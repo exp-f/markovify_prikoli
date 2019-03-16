@@ -22,6 +22,7 @@ port = sys.argv[1]
 def thread_wrap():
     while True:
         weights = [random.uniform(1.0, 2.0) for _ in range(3)]
+        weights[1] *= 5
         global msg, t_model, p_model, ch_model
         combo_model = markovify.combine([t_model, p_model, ch_model], weights=weights)
         msg = combo_model.make_short_sentence(280, tries=1000)
